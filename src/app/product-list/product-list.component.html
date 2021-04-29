@@ -1,0 +1,34 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> <!-- hace que cuando pasas el mouse por encima salga "Phone XL details" y la etiqueta a te lo pone como hipervinculo-->
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description"> <!-- solo crea el elemento <p> si el elemento tiene una descipcion-->
+    Description: {{product.description}}
+  </p>
+
+  <button (click)="share()"> <!-- llama al metodo share de product-list.component.ts cuando hace click-->
+    Share
+  </button>
+
+
+<!--hace que ProductAlertComponent sea un hijo de ProductListComponent, haciendo que se vea en la pagina el boton de notify me-->
+<app-product-alerts 
+  [product]="product" 
+  (notify)="onNotify()"> <!--onNotify metedo viene de ProductListComponent.ts -->
+  
+</app-product-alerts>
+
+
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
