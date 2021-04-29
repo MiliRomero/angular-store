@@ -1,6 +1,6 @@
 <h3>Shipping Prices</h3>
 
-<div class="shipping-item" *ngFor="let shippinng of shippingCosts | async"> <!-- async retorna el ultimo valor de un flujo de datos y continúa haciéndolo durante la vida útil de un componente determinado, cuando se destruye el componente, async para automaticamente-->
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async"> <!-- async retorna el ultimo valor de un flujo de datos y continúa haciéndolo durante la vida útil de un componente determinado, cuando se destruye el componente, async para automaticamente-->
   <span> {{ shipping.type }} </span>
   <span> {{ shipping.price }} </span>
 </div>
